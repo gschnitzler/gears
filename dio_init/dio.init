@@ -1,4 +1,4 @@
-#!/sbin/openrc-run
+#!/usr/bin/openrc-run
 
 #depend() {
 # container start invokes genesis, which mounts genesis and provides the Libs needed by DIO.
@@ -13,13 +13,13 @@ start() {
    # /usr/bin/genesis exit
    # then there is the please client, and its users don't have permission to access genesis.
    # so lets copy over Libs and change permissions. best place to do that is on config install
-   /usr/sbin/dio   
+   /usr/bin/dio   
    eend $?
 }
 
 stop() {
    ebegin "Stopping dio"
-   for i in  $(ps aux| grep '/usr/sbin/dio' | grep perl | awk '{print $2}'); do kill $i; done
+   for i in  $(ps aux| grep '/usr/bin/dio' | grep perl | awk '{print $2}'); do kill $i; done
    eend $?
 }
 

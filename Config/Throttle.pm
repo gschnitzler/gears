@@ -54,7 +54,7 @@ my $c
                 args => {                          # additional arguments passed to the handler
 
                     # well, modifying the generated config is bad, but i dont see much harm here
-                    sshd_bin  => '/usr/sbin/sshd',
+                    sshd_bin  => '/usr/bin/sshd',
                     sshd_cf   => $c->{sshd}->{sshd_cf},
                     down_port => $c->{sshd}->{down_port},
                     up_port   => '1000',
